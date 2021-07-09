@@ -11,6 +11,7 @@ function draw() {
 }
 function mousePressed(){
 	grafo.pintarNodo(mouseX,mouseY,color(255,0,0));
+
 }
 function crearEstrella(){
 		let n1=new Nodo(200,10);
