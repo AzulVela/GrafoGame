@@ -51,7 +51,13 @@ class Arco{
 	calcularAngulo(x1,y1,x2,y2){
 		let x=x2-x1;
 		let y=y2-y1;
-		let angulo=atan(abs(y)/abs(x));
+		let angulo=0;
+		let h=sqrt(x*x+y*y);
+		if(x!=0&&y!=0)
+		{
+			angulo=asin(abs(y)/h);
+		}
+		
 		let deg=degrees(angulo);
 		let lado;
 		//-1 izquierdo,1 derecho
@@ -79,16 +85,16 @@ class Arco{
 		
 	}
 	xInic(x1,y1,x2,y2){
-		return x1+5*this.calcularAngulo(x1,y1,x2,y2);
+		return x1+10*cos(this.calcularAngulo(x1,y1,x2,y2));
 	}
 	yInic(x1,y1,x2,y2){
-		return y1+5*this.calcularAngulo(x1,y1,x2,y2);
+		return y1+10*sin(this.calcularAngulo(x1,y1,x2,y2));
 	}
 	xFin(x1,y1,x2,y2){
-		return x2-5*this.calcularAngulo(x1,y1,x2,y2);
+		return x2-10*cos(this.calcularAngulo(x1,y1,x2,y2));
 	}
 	yFin(x1,y1,x2,y2){
-		return y2-5*this.calcularAngulo(x1,y1,x2,y2);
+		return y2-10*sin(this.calcularAngulo(x1,y1,x2,y2));
 	}
 	nodoSelec(){
 		return this.nodoSeleccionado;

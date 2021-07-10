@@ -2,7 +2,7 @@ let grafo;
 function setup() {
 	createCanvas(400,400);
 	grafo = new Grafo();
-	crearEstrella();
+	crearTest();
 }
 
 function draw() {
@@ -12,6 +12,21 @@ function draw() {
 function mousePressed(){
 	grafo.pintarNodo(mouseX,mouseY,color(255,0,0));
 
+}
+function crearTest(){
+	let n1 = new Nodo(100,10);
+	let n2=new Nodo(200,200);
+	let n3 = new Nodo(300,50);
+	let n4= new Nodo(200,300);
+	let n5=new Nodo(20,150);
+	let a12=new Arco(n1,n2);
+	let a23=new Arco(n2,n3);
+	let a34=new Arco(n3,n4);
+	let a45=new Arco(n4,n5);
+	grafo.agregarArco(a12);
+	grafo.agregarArco(a23);
+	grafo.agregarArco(a34);
+	grafo.agregarArco(a45);
 }
 function crearEstrella(){
 		let n1=new Nodo(200,10);
